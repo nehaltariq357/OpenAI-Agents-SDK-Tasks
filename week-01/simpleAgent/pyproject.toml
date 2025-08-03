@@ -1,0 +1,20 @@
+[project]
+name = "simpleagent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "nehaltariq357", email = "143392985+nehaltariq357@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "openai-agents>=0.2.4",
+]
+
+[project.scripts]
+simpleagent = "simpleagent:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
