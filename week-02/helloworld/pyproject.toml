@@ -15,9 +15,10 @@ dependencies = [
 [project.scripts]
 helloworld = "helloworld:main"
 dev = "helloworld.hello:simple_agent"
-temp = "helloworld.temp:main"
-tools = "helloworld.tools:main"
-tokens = "helloworld.tokens:main"
+temp = "helloworld.modelSettings.temp:main"
+tools = "helloworld.modelSettings.tools:main"
+tokens = "helloworld.modelSettings.tokens:main"
+ins = "helloworld.dynamicInstructions.main:main"
 
 [build-system]
 requires = ["hatchling"]
