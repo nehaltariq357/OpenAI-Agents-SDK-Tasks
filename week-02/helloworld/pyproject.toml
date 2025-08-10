@@ -20,6 +20,7 @@ tools = "helloworld.modelSettings.tools:main"
 tokens = "helloworld.modelSettings.tokens:main"
 ins = "helloworld.dynamicInstructions.main:main"
 context= "helloworld.dynamicInstructions.context.main:main"
+assign= "helloworld.dynamicInstructions.assignment:main"
 
 [build-system]
 requires = ["hatchling"]
