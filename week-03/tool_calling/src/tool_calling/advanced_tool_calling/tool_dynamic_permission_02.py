@@ -26,11 +26,13 @@ class UserContext(BaseModel):
 
 def premium_feature_enabled(context: RunContextWrapper, agent: Agent) -> bool:
     print(f"premium_feature_enabled()")
+    # print(context)
     print(context.context.subscription_tier, context.context.subscription_tier in ["premium", "enterprise"])
     return context.context.subscription_tier in ["premium", "enterprise"]
 
 @function_tool(is_enabled=premium_feature_enabled)
 def get_weather(city: str) -> str:
+    print("weather tool fire ------>")
     print(f"[ADV] get_weather()")
     return "Weather is sunny"
 
