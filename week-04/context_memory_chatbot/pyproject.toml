@@ -1,0 +1,21 @@
+[project]
+name = "context-memory-chatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "nehaltariq357", email = "143392985+nehaltariq357@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "openai-agents>=0.2.6",
+]
+
+[project.scripts]
+context-memory-chatbot = "context_memory_chatbot.main:main"
+context = "context_memory_chatbot.context.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
