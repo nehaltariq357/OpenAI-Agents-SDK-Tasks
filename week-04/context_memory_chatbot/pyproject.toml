@@ -15,6 +15,11 @@ dependencies = [
 [project.scripts]
 context-memory-chatbot = "context_memory_chatbot.main:main"
 context = "context_memory_chatbot.context.main:main"
+session_hello = "context_memory_chatbot.session_memory.hello:main"
+persist = "context_memory_chatbot.session_memory.persist:main"
+operations = "context_memory_chatbot.session_memory.operations:main"
+chatAgent = "context_memory_chatbot.session_memory.customer_support_chatAgent:main"
+CustomAgent = "context_memory_chatbot.session_memory.custom_simple_agent_class:CustomerSupportBot"
 
 [build-system]
 requires = ["hatchling"]
