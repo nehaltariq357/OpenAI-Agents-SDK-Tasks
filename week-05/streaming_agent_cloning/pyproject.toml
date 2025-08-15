@@ -1,0 +1,22 @@
+[project]
+name = "streaming-agent-cloning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "nehaltariq357", email = "143392985+nehaltariq357@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "openai-agents>=0.2.7",
+]
+
+[project.scripts]
+streaming-agent-cloning = "streaming_agent_cloning:main"
+streaming = "streaming_agent_cloning.streaming.main:main"
+streaming_msg = "streaming_agent_cloning.streaming.streaming_messages:streaming_msg"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
