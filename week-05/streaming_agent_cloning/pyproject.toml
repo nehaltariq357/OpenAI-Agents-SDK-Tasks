@@ -16,6 +16,7 @@ dependencies = [
 streaming-agent-cloning = "streaming_agent_cloning:main"
 streaming = "streaming_agent_cloning.streaming.main:main"
 streaming_msg = "streaming_agent_cloning.streaming.streaming_messages:streaming_msg"
+streaming_joke = "streaming_agent_cloning.streaming.streaming_joke:main"
 
 [build-system]
 requires = ["hatchling"]

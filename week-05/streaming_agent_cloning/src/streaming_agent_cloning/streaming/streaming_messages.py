@@ -1,4 +1,4 @@
-
+import time
 import os
 from agents import Agent,AsyncOpenAI,OpenAIChatCompletionsModel,set_tracing_disabled,Runner,ItemHelpers
 from openai.types.responses import ResponseTextDeltaEvent
@@ -29,19 +29,18 @@ async def streaming_msg():
     
 )
 
-    # result = Runner.run_streamed(
-    #     starting_agent=agent,
-    #     input="Tell me 5 jokes.",
-    # )
+    result = Runner.run_streamed(
+        starting_agent=agent,
+        input="Please tell me 5 jokes.",
+    )
 
     # async for event in result.stream_events():
     #     if event.item.type == "message_output_item":
     #         print(ItemHelpers.text_message_output(event.item))
 
-    result = Runner.run_streamed(agent, input="Please tell me 5 jokes.")
     async for event in result.stream_events():
         if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
             print(event.data.delta, end="", flush=True)
-
+            time.sleep(0.5)
 
 asyncio.run(streaming_msg())
