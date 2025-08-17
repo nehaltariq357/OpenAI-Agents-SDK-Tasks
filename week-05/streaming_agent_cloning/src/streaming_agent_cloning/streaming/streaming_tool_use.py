@@ -2,7 +2,7 @@ import os
 import asyncio
 from dataclasses import dataclass
 from dotenv import load_dotenv
-
+from openai.types.responses import ResponseTextDeltaEvent
 from agents import (
     Agent,
     AsyncOpenAI,
@@ -11,6 +11,8 @@ from agents import (
     Runner,
     function_tool,
     RunContextWrapper,
+    ItemHelpers
+    
 )
 
 # Load environment variables
@@ -77,7 +79,7 @@ def special_prompt(context: RunContextWrapper[UserContext], agent: Agent[UserCon
 # -------------------------
 # Main Runner
 # -------------------------
-def main():
+async def main():
     user_context = UserContext(username="Nehal")
 
     math_agent = Agent(
@@ -87,15 +89,32 @@ def main():
         tools=[search],
     )
 
-    result = Runner.run_sync(
+    
+    result =  Runner.run_streamed(
         starting_agent=math_agent,
         input="search for the best tutor in my area.",
         context=user_context,
     )
 
-    print("\n--- Final Output ---")
-    print(result.final_output)
+    print("=== Run starting ===")
+
+    async for event in result.stream_events():
+        # We'll ignore the raw responses event deltas
+        if event.type == "raw_response_event":
+            continue
+        elif event.type == "agent_updated_stream_event":
+            print(f"Agent updated: {event.new_agent.name}")
+            continue
+        elif event.type == "run_item_stream_event":
+            if event.item.type == "tool_call_item":
+                print("-- Tool was called")
+            elif event.item.type == "tool_call_output_item":
+                print(f"-- Tool output: {event.item.output}")
+            elif event.item.type == "message_output_item":
+                print(f"-- Message output:\n {ItemHelpers.text_message_output(event.item)}")
+
+    print("=== Run complete ===")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
