@@ -19,6 +19,9 @@ streaming_msg = "streaming_agent_cloning.streaming.streaming_messages:streaming_
 streaming_joke = "streaming_agent_cloning.streaming.streaming_joke:main"
 streaming_tool = "streaming_agent_cloning.streaming.streaming_tool_use:main"
 basic_clone = "streaming_agent_cloning.agent_clone_11.basic_cloning:basic_cloning"
+clone_settings = "streaming_agent_cloning.agent_clone_11.Cloning_with_Different_Settings_02:main"
+clone_tools = "streaming_agent_cloning.agent_clone_11.Cloning_with_Different_Tools_03:main"
+clone_multiple = "streaming_agent_cloning.agent_clone_11.Multiple_Clones_from_One_Base_04:main"
 
 [build-system]
 requires = ["hatchling"]
