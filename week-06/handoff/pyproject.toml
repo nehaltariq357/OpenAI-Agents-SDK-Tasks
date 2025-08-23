@@ -17,6 +17,9 @@ dependencies = [
 handoff = "handoff:main"
 basic = "handoff.basic_handoff_14.main:basic_handoff"
 handoff_obj = "handoff.advanced_handoff_22.handoff_obj_01:handoff_obj"
+handsoff_callbacks = "handoff.advanced_handoff_22.handsoff_callbacks_02:handsoff_callbacks"
+input_filters = "handoff.advanced_handoff_22.input_filter.input_filters_03:input_filters"
+remove_all_tools = "handoff.advanced_handoff_22.input_filter.remove_all_tools:remove_all_tools"
 
 [build-system]
 requires = ["hatchling"]
