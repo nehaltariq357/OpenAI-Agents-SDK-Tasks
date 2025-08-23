@@ -1,0 +1,23 @@
+[project]
+name = "handoff"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "nehaltariq357", email = "143392985+nehaltariq357@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "openai-agents>=0.2.9",
+    "rich>=14.1.0",
+]
+
+[project.scripts]
+handoff = "handoff:main"
+basic = "handoff.basic_handoff_14.main:basic_handoff"
+handoff_obj = "handoff.advanced_handoff_22.handoff_obj_01:handoff_obj"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
