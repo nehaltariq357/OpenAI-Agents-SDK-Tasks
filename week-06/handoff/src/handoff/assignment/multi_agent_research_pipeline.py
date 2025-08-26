@@ -71,7 +71,7 @@ summarizer_agent = Agent(
         "Step 3: Wrap the result into TaskSpec and handoff to Action-Taker."
     ),
     model=model,
-    handoffs=[to_action_taker]
+    handoffs=[to_action_taker],
 )
 
 to_summarizer = handoff(
