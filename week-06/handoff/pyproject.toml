@@ -25,6 +25,7 @@ pre_handoff_items = "handoff.advanced_handoff_22.input_filter.pre_handoff_items:
 new_items = "handoff.advanced_handoff_22.input_filter.new_items:new_items"
 is_enabled = "handoff.advanced_handoff_22.is_enabled_04:is_enabled"
 lab = "handoff.advanced_handoff_22.Mini_Lab.advanced_customer_support_handoff_system:main"
+assign = "handoff.assignment.multi_agent_research_pipeline:main"
 
 [build-system]
 requires = ["hatchling"]
