@@ -176,4 +176,10 @@ print(z)
 
 **bold**
 
-![bold](qr.png)
+
+# Basic Clickable Image
+
+[![clickable image](qr.png "visit github")](https://github.com/nehaltariq357)
+
+
+
