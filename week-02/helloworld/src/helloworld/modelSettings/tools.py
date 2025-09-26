@@ -22,6 +22,7 @@ external_clinet = AsyncOpenAI(
 model = OpenAIChatCompletionsModel(
     model = "gemini-2.0-flash",
     openai_client = external_clinet,
+
 )
 
 config = RunConfig(
@@ -46,7 +47,7 @@ def main():
 agent_auto = Agent(
         name="Auto",
         tools=[calculate_area] , #calculatate_area
-        model_settings=ModelSettings(tool_choice="auto")
+        model_settings=ModelSettings(tool_choice="auto"),
         )
 
 agent_required = Agent(

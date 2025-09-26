@@ -42,7 +42,8 @@ def main():
         "Always use tools for math questions. Always follow DMAS rule (division, multiplication, addition, subtraction). "
         "Explain answers clearly and briefly for beginners.",
         model=model,
-        tools=[multiplys,additions] # providing tools
+        tools=[multiplys,additions], # providing tools
+        
     )
     # 🧪 5) Run the agent with a prompt (tool calling expected)
     prompt = "2*2=?"

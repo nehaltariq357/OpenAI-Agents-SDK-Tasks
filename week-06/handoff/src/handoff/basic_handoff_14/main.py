@@ -41,7 +41,7 @@ triage_agent = Agent(
         "Once handed off, the specialist should continue the conversation."
     ),
     model=model,
-    handoffs=[billing_agent,handoff(agent=refund_agent)]  # either direct agent or `handoff(...)`
+    handoffs=[billing_agent,handoff(agent=refund_agent,)]  # either direct agent or `handoff(...)`
     
 )
 

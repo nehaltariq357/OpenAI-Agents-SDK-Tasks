@@ -91,7 +91,7 @@ This is line 4.
 <https://www.facebook.com/>
 ---
 
-[youtube](https://www.youtube.com/)
+[youtube]:(https://www.youtube.com/)
 
 ---
 
@@ -183,3 +183,10 @@ print(z)
 
 
 
+# Inline Code (recommended for keywords)
+`min_length` → kam se kam characters hone chahiye
+
+
+👉 min_length → kam se kam characters hone chahiye
+
+(Ye zyada clear lagta hai programming words ke liye.)
